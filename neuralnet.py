@@ -33,14 +33,14 @@ for i in range(60000):
     # multiply the predicted data( from the hidden layer ) with the second synapse matrix and run it through the activation function
     l2 = nonlin(np.dot(l1, syn1));
     
-    # calculate the error by subtracting the predicteed output from the actual output
+    # calculate the error by subtracting the predicted output from the actual output
     l2_error = y - l2
 
     # print the error at a given interval
     if (i % 1000) == 0:
         print("Error: " + str(np.mean(np.abs(l2_error))))
 
-    # backpropagation
+    # back-propagation
 
     # multiply the l2 error with the sigmoid derivative
     l2_delta = l2_error * nonlin(l2, deriv=True)
